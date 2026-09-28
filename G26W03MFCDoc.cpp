@@ -59,11 +59,11 @@ void CG26W03MFCDoc::Serialize(CArchive& ar)
 {
 	if (ar.IsStoring())
 	{
-		// TODO: 여기에 저장 코드를 추가합니다.
+		ar << Point;                        // Point >> ar; 이거는 안 됨 ! 시험에 이렇게 낼 수도 있음 ! and Point >> ar; 이거는 안 됨 ! 시험에 이렇게 페이크로 가능 
 	}
 	else
 	{
-		// TODO: 여기에 로딩 코드를 추가합니다.
+		ar >> Point;                        // Point >> ar; 이거는 안 됨 ! 시험에 이렇게 낼 수도 있음 ! and Point >> ar; 이거는 안 됨 ! 시험에 이렇게 페이크로 가능
 	}
 }
 
