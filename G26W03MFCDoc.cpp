@@ -45,7 +45,9 @@ BOOL CG26W03MFCDoc::OnNewDocument()
 
 	// TODO: 여기에 재초기화 코드를 추가합니다.
 	// SDI 문서는 이 문서를 다시 사용합니다.
-	Point = CPoint(-100, -100);
+	// Point = CPoint(-100, -100);
+
+	Points.RemoveAll();
 
 	return TRUE;
 }
@@ -57,14 +59,15 @@ BOOL CG26W03MFCDoc::OnNewDocument()
 
 void CG26W03MFCDoc::Serialize(CArchive& ar)
 {
-	if (ar.IsStoring())
-	{
-		ar << Point;                        // Point >> ar; 이거는 안 됨 ! 시험에 이렇게 낼 수도 있음 ! and Point >> ar; 이거는 안 됨 ! 시험에 이렇게 페이크로 가능 
-	}
-	else
-	{
-		ar >> Point;                        // Point >> ar; 이거는 안 됨 ! 시험에 이렇게 낼 수도 있음 ! and Point >> ar; 이거는 안 됨 ! 시험에 이렇게 페이크로 가능
-	}
+//	if (ar.IsStoring())
+//	{
+//		ar << Point;                        // Point >> ar; 이거는 안 됨 ! 시험에 이렇게 낼 수도 있음 ! and Point >> ar; 이거는 안 됨 ! 시험에 이렇게 페이크로 가능 
+//	}
+//	else
+//	{
+//		ar >> Point;                        // Point >> ar; 이거는 안 됨 ! 시험에 이렇게 낼 수도 있음 ! and Point >> ar; 이거는 안 됨 ! 시험에 이렇게 페이크로 가능
+//	}
+	Points.Serialize(ar);
 }
 
 #ifdef SHARED_HANDLERS
